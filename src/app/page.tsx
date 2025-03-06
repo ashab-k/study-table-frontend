@@ -9,7 +9,6 @@ import { motion } from "framer-motion";
 import { FloatingCursor } from "@/components/floating-cursor";
 import { LoadingScreen } from "@/components/loading-screen";
 import { TypewriterEffect } from "@/components/typewriter-effect";
-import { ParticlesBackground } from "@/components/particles-background";
 import { TestimonialCarousel } from "@/components/testimonial-carousel";
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -28,7 +27,6 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-white overflow-hidden relative">
-      <ParticlesBackground />
       <FloatingCursor />
 
       <motion.header
