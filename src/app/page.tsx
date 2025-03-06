@@ -6,12 +6,11 @@ import Link from "next/link";
 import { ArrowRight, X, Sparkles, Brain, BookOpen, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { LoadingScreen } from "@/components/loading-screen";
 import { FloatingCursor } from "@/components/floating-cursor";
+import { LoadingScreen } from "@/components/loading-screen";
 import { TypewriterEffect } from "@/components/typewriter-effect";
 import { ParticlesBackground } from "@/components/particles-background";
 import { TestimonialCarousel } from "@/components/testimonial-carousel";
-
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -179,7 +178,7 @@ export default function Home() {
             className="relative"
           >
             <Image
-              src="/placeholder.svg?height=400&width=500"
+              src="/Learning Concept Illustration.svg"
               alt="Student studying with STUDYtable"
               width={500}
               height={400}
@@ -296,7 +295,7 @@ export default function Home() {
           viewport={{ once: true }}
         >
           <Image
-            src="/placeholder.svg?height=400&width=500"
+            src="/Nerd Concept Illustration.svg"
             alt="AI practice session interface"
             width={500}
             height={400}
@@ -304,57 +303,35 @@ export default function Home() {
           />
 
           <motion.div
-            className="absolute top-10 right-10 border rounded-lg bg-white p-3 shadow-md max-w-xs"
+            className="absolute top-10 right-10 w-full max-w-md p-3"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3, duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <div className="text-sm mb-2">Did you get the concept?</div>
-            <TypewriterEffect
-              text="Yes, it's based on the principle of the maximum height of a projectile."
-              className="text-sm bg-gray-100 p-2 rounded-lg mb-2"
-            />
-            <div className="text-sm mb-2">That's correct.</div>
-            <TypewriterEffect
-              text="But I forgot the formula."
-              className="text-sm bg-gray-100 p-2 rounded-lg mb-2"
-              delay={2}
-            />
-            <TypewriterEffect
-              text="Okay, h=(v₀)² sin²(θ)/2g"
-              className="text-sm mb-2"
-              delay={3}
-            />
-          </motion.div>
+            <div className="flex flex-col gap-2 text-sm">
+              <div className="self-start bg-gray-100 px-3 py-2 rounded-lg">
+                Got the concept?
+              </div>
 
-          <motion.div
-            className="absolute bottom-10 left-1/2 transform -translate-x-1/2 bg-black text-white px-4 py-2 rounded flex items-center text-sm"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            animate={{
-              boxShadow: [
-                "0px 0px 0px rgba(0,0,0,0)",
-                "0px 0px 15px rgba(59, 130, 246, 0.5)",
-                "0px 0px 0px rgba(0,0,0,0)",
-              ],
-            }}
-            transition={{
-              delay: 0.5,
-              duration: 0.5,
-              boxShadow: {
-                repeat: Number.POSITIVE_INFINITY,
-                duration: 2,
-                repeatType: "reverse",
-              },
-            }}
-          >
-            <span>Improve performance by enabling hardware acceleration</span>
-            <Button variant="link" className="text-white ml-2">
-              Learn more
-            </Button>
-            <X className="h-4 w-4 ml-2 cursor-pointer" />
+              <div className="self-end bg-blue-100 px-3 py-2 rounded-lg">
+                Yeah, it's about max height.
+              </div>
+
+              <div className="self-start bg-gray-100 px-3 py-2 rounded-lg">
+                That's right.
+              </div>
+
+              <div className="self-end bg-blue-100 px-3 py-2 rounded-lg">
+                Forgot the formula.
+              </div>
+
+              <TypewriterEffect
+                text="It's h = (v₀)² sin²(θ) / 2g"
+                className="self-start bg-gray-100 px-3 py-2 rounded-lg"
+                delay={3}
+              />
+            </div>
           </motion.div>
         </motion.div>
       </section>
