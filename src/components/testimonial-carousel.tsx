@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -79,15 +80,17 @@ export function TestimonialCarousel() {
             </div>
 
             <p className="text-gray-700 text-lg mb-6">
-              "{testimonials[current].content}"
+              &quot;{testimonials[current].content}&quot;
             </p>
 
             <div className="flex items-center mt-4">
               <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
-                <img
-                  src={testimonials[current].avatar || "/placeholder.svg"}
+                <Image
+                  src="/Profile Icon.png"
                   alt={testimonials[current].name}
                   className="w-full h-full object-cover"
+                  height={100}
+                  width={100}
                 />
               </div>
               <div className="text-left">

@@ -3,13 +3,14 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, X, Sparkles, Brain, BookOpen, Award } from "lucide-react";
+import { ArrowRight, Sparkles, Brain, BookOpen, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { FloatingCursor } from "@/components/floating-cursor";
 import { LoadingScreen } from "@/components/loading-screen";
 import { TypewriterEffect } from "@/components/typewriter-effect";
 import { TestimonialCarousel } from "@/components/testimonial-carousel";
+
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -26,7 +27,7 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen bg-white overflow-hidden relative">
+    <main className="min-h-screen bg-gradient-to-b from-white to-blue-50 overflow-hidden relative">
       <FloatingCursor />
 
       <motion.header
@@ -38,7 +39,7 @@ export default function Home() {
         <div className="text-center mb-12">
           <h1 className="text-3xl font-bold relative inline-block">
             <motion.span
-              className="font-bold"
+              className="font-bold text-indigo-600"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.5 }}
@@ -46,7 +47,7 @@ export default function Home() {
               STUDY
             </motion.span>
             <motion.span
-              className="font-normal"
+              className="font-normal text-gray-800"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.5 }}
@@ -54,7 +55,7 @@ export default function Home() {
               table
             </motion.span>
             <motion.span
-              className="absolute -top-2 -right-6 text-yellow-400"
+              className="absolute -top-2 -right-6 text-amber-400"
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ delay: 0.6, duration: 0.5, type: "spring" }}
@@ -79,7 +80,7 @@ export default function Home() {
               transition={{ delay: 0.3, duration: 0.5 }}
             >
               <motion.span
-                className="font-bold inline-block"
+                className="font-bold inline-block text-indigo-700"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.5 }}
@@ -87,7 +88,7 @@ export default function Home() {
                 Optimize
               </motion.span>{" "}
               <motion.span
-                className="text-gray-500 inline-block"
+                className="text-gray-600 inline-block"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5, duration: 0.5 }}
@@ -96,7 +97,7 @@ export default function Home() {
               </motion.span>
               <br />
               <motion.span
-                className="font-bold inline-block"
+                className="font-bold inline-block text-indigo-700"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6, duration: 0.5 }}
@@ -104,7 +105,7 @@ export default function Home() {
                 JEE, NEET,
               </motion.span>{" "}
               <motion.span
-                className="text-gray-500 inline-block"
+                className="text-gray-600 inline-block"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.7, duration: 0.5 }}
@@ -112,7 +113,7 @@ export default function Home() {
                 and
               </motion.span>{" "}
               <motion.span
-                className="font-bold inline-block"
+                className="font-bold inline-block text-indigo-700"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8, duration: 0.5 }}
@@ -142,7 +143,7 @@ export default function Home() {
             transition={{ delay: 1, duration: 0.5 }}
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button className="bg-zinc-900 hover:bg-zinc-800 text-white rounded px-6 py-2 relative overflow-hidden group">
+              <Button className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white rounded px-6 py-2 relative overflow-hidden group">
                 <span className="relative z-10">Apply for admission</span>
                 <span className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
               </Button>
@@ -154,7 +155,7 @@ export default function Home() {
             >
               <Link
                 href="#"
-                className="flex items-center text-zinc-800 px-2 py-2 hover:text-blue-600 transition-colors duration-300"
+                className="flex items-center text-indigo-600 px-2 py-2 hover:text-blue-600 transition-colors duration-300"
               >
                 Sign In{" "}
                 <ArrowRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -194,11 +195,15 @@ export default function Home() {
               boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)",
             }}
           >
-            <div className="text-center">NEET</div>
-            <div className="text-center font-bold">JEE</div>
-            <div className="text-center text-sm">Scholarship</div>
-            <div className="text-center text-sm">School Test</div>
-            <div className="text-center font-bold">Boards</div>
+            <div className="text-center text-indigo-400">NEET</div>
+            <div className="text-center font-bold text-indigo-600">JEE</div>
+            <div className="text-center text-sm text-indigo-300">
+              Scholarship
+            </div>
+            <div className="text-center text-sm text-indigo-400">
+              School Test
+            </div>
+            <div className="text-center font-bold text-indigo-600">Boards</div>
           </motion.div>
         </motion.div>
       </section>
@@ -210,7 +215,7 @@ export default function Home() {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-2xl font-bold text-center mb-12">
+        <h2 className="text-2xl font-bold text-center mb-12 text-indigo-800">
           Why Choose STUDYtable?
         </h2>
         <div className="grid md:grid-cols-3 gap-8">
@@ -220,33 +225,43 @@ export default function Home() {
               title: "AI-Powered Learning",
               description:
                 "Our advanced AI algorithms adapt to your learning style and pace to provide personalized education.",
+              color: "bg-purple-50",
+              iconColor: "text-purple-600",
             },
             {
               icon: BookOpen,
               title: "Comprehensive Coverage",
               description:
                 "Complete syllabus coverage for JEE, NEET, and Board exams with expertly crafted study materials.",
+              color: "bg-blue-50",
+              iconColor: "text-blue-600",
             },
             {
               icon: Award,
               title: "Proven Results",
               description:
                 "Join thousands of students who have achieved top ranks in competitive exams with our guidance.",
+              color: "bg-indigo-50",
+              iconColor: "text-indigo-600",
             },
           ].map((feature, index) => (
             <motion.div
               key={index}
-              className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
+              className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2, duration: 0.5 }}
               viewport={{ once: true }}
               whileHover={{ y: -10 }}
             >
-              <div className="bg-blue-50 p-3 rounded-full w-14 h-14 flex items-center justify-center mb-4">
-                <feature.icon className="h-8 w-8 text-blue-600" />
+              <div
+                className={`${feature.color} p-3 rounded-full w-14 h-14 flex items-center justify-center mb-4`}
+              >
+                <feature.icon className={`h-8 w-8 ${feature.iconColor}`} />
               </div>
-              <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
+              <h3 className="text-xl font-bold mb-2 text-gray-800">
+                {feature.title}
+              </h3>
               <p className="text-gray-600">{feature.description}</p>
             </motion.div>
           ))}
@@ -260,7 +275,7 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl font-bold mb-6">
+          <h2 className="text-3xl font-bold mb-6 text-indigo-700">
             Unlimited Practice session
           </h2>
           <p className="text-gray-600 mb-4">
@@ -270,8 +285,8 @@ export default function Home() {
           </p>
           <p className="text-gray-600 mb-4">
             Our innovative AI algorithm crafts batches of 20 questions, each
-            accompanied by instant feedback and solutions - it's like having a
-            Home tutor 24X7.
+            accompanied by instant feedback and solutions - it&apos;s like
+            having a Home tutor 24X7.
           </p>
 
           <motion.div
@@ -279,7 +294,7 @@ export default function Home() {
             whileTap={{ scale: 0.95 }}
             className="mt-6"
           >
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white rounded px-6 py-2">
+            <Button className="bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white rounded px-6 py-2">
               Try a practice session
             </Button>
           </motion.div>
@@ -312,21 +327,21 @@ export default function Home() {
                 Got the concept?
               </div>
 
-              <div className="self-end bg-blue-100 px-3 py-2 rounded-lg">
-                Yeah, it's about max height.
+              <div className="self-end bg-indigo-100 px-3 py-2 rounded-lg text-indigo-800">
+                Yeah, it&apos;s about max height.
               </div>
 
               <div className="self-start bg-gray-100 px-3 py-2 rounded-lg">
-                That's right.
+                That&apos;s right.
               </div>
 
-              <div className="self-end bg-blue-100 px-3 py-2 rounded-lg">
+              <div className="self-end bg-indigo-100 px-3 py-2 rounded-lg text-indigo-800">
                 Forgot the formula.
               </div>
 
               <TypewriterEffect
                 text="It's h = (v₀)² sin²(θ) / 2g"
-                className="self-start bg-gray-100 px-3 py-2 rounded-lg"
+                className="self-start bg-purple-100 px-3 py-2 rounded-lg text-purple-800"
                 delay={3}
               />
             </div>
@@ -335,14 +350,14 @@ export default function Home() {
       </section>
 
       <motion.section
-        className="bg-gray-50 py-16"
+        className="bg-gradient-to-b from-blue-50 to-indigo-50 py-16"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">
+          <h2 className="text-3xl font-bold text-center mb-12 text-indigo-800">
             What Our Students Say
           </h2>
           <TestimonialCarousel />
@@ -350,7 +365,7 @@ export default function Home() {
       </motion.section>
 
       <motion.section
-        className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-16"
+        className="bg-gradient-to-r from-indigo-600 to-purple-700 text-white py-16"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
@@ -382,29 +397,32 @@ export default function Home() {
             transition={{ delay: 0.6, duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <Button className="bg-white text-blue-600 hover:bg-gray-100 rounded-full px-8 py-6 text-lg font-bold">
+            <Button className="bg-white text-indigo-600 hover:bg-gray-100 rounded-full px-8 py-6 text-lg font-bold shadow-lg">
               Get Started Today
             </Button>
           </motion.div>
         </div>
       </motion.section>
 
-      <footer className="bg-zinc-900 text-white py-12">
+      <footer className="bg-gradient-to-r from-zinc-900 to-indigo-900 text-white py-12">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
-              <h3 className="text-xl font-bold mb-4">STUDYtable</h3>
+              <h3 className="text-xl font-bold mb-4">
+                <span className="text-indigo-400">STUDY</span>
+                <span className="font-normal">table</span>
+              </h3>
               <p className="text-gray-400">
                 Your personal AI-Tutor for all academic needs.
               </p>
             </div>
             <div>
-              <h4 className="font-bold mb-4">Quick Links</h4>
+              <h4 className="font-bold mb-4 text-indigo-300">Quick Links</h4>
               <ul className="space-y-2">
                 <li>
                   <Link
                     href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover:text-indigo-300 transition-colors"
                   >
                     Home
                   </Link>
@@ -412,7 +430,7 @@ export default function Home() {
                 <li>
                   <Link
                     href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover:text-indigo-300 transition-colors"
                   >
                     About Us
                   </Link>
@@ -420,7 +438,7 @@ export default function Home() {
                 <li>
                   <Link
                     href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover:text-indigo-300 transition-colors"
                   >
                     Courses
                   </Link>
@@ -428,7 +446,7 @@ export default function Home() {
                 <li>
                   <Link
                     href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover:text-indigo-300 transition-colors"
                   >
                     Contact
                   </Link>
@@ -436,12 +454,12 @@ export default function Home() {
               </ul>
             </div>
             <div>
-              <h4 className="font-bold mb-4">Exams</h4>
+              <h4 className="font-bold mb-4 text-indigo-300">Exams</h4>
               <ul className="space-y-2">
                 <li>
                   <Link
                     href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover:text-indigo-300 transition-colors"
                   >
                     JEE
                   </Link>
@@ -449,7 +467,7 @@ export default function Home() {
                 <li>
                   <Link
                     href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover:text-indigo-300 transition-colors"
                   >
                     NEET
                   </Link>
@@ -457,7 +475,7 @@ export default function Home() {
                 <li>
                   <Link
                     href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover:text-indigo-300 transition-colors"
                   >
                     Board Exams
                   </Link>
@@ -465,7 +483,7 @@ export default function Home() {
                 <li>
                   <Link
                     href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover:text-indigo-300 transition-colors"
                   >
                     Scholarships
                   </Link>
@@ -473,11 +491,13 @@ export default function Home() {
               </ul>
             </div>
             <div>
-              <h4 className="font-bold mb-4">Connect With Us</h4>
+              <h4 className="font-bold mb-4 text-indigo-300">
+                Connect With Us
+              </h4>
               <div className="flex space-x-4">
                 <Link
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-400 hover:text-indigo-300 transition-colors"
                 >
                   <svg
                     className="h-6 w-6"
@@ -494,7 +514,7 @@ export default function Home() {
                 </Link>
                 <Link
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-400 hover:text-indigo-300 transition-colors"
                 >
                   <svg
                     className="h-6 w-6"
@@ -507,7 +527,7 @@ export default function Home() {
                 </Link>
                 <Link
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-400 hover:text-indigo-300 transition-colors"
                 >
                   <svg
                     className="h-6 w-6"
@@ -525,7 +545,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400">
+          <div className="mt-8 pt-8 border-t border-indigo-900 text-center text-gray-400">
             <p>© 2025 STUDYtable. All rights reserved.</p>
           </div>
         </div>

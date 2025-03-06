@@ -17,10 +17,8 @@ export function TypewriterEffect({
   const [isTyping, setIsTyping] = useState(false);
 
   useEffect(() => {
-    let timeout: NodeJS.Timeout;
-
     // Initial delay before starting to type
-    timeout = setTimeout(() => {
+    const timeout: NodeJS.Timeout = setTimeout(() => {
       setIsTyping(true);
 
       let currentIndex = 0;
