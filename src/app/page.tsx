@@ -30,42 +30,6 @@ export default function Home() {
     <main className="min-h-screen bg-gradient-to-b from-white to-blue-50 overflow-hidden relative">
       <FloatingCursor />
 
-      <motion.header
-        className="container mx-auto pt-6 px-4"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <div className="text-center mb-12">
-          <h1 className="text-3xl font-bold relative inline-block">
-            <motion.span
-              className="font-bold text-indigo-600"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-            >
-              STUDY
-            </motion.span>
-            <motion.span
-              className="font-normal text-gray-800"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4, duration: 0.5 }}
-            >
-              table
-            </motion.span>
-            <motion.span
-              className="absolute -top-2 -right-6 text-amber-400"
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ delay: 0.6, duration: 0.5, type: "spring" }}
-            >
-              <Sparkles className="h-5 w-5" />
-            </motion.span>
-          </h1>
-        </div>
-      </motion.header>
-
       <section className="container mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
         <div>
           <motion.div
