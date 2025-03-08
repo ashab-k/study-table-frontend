@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Sparkles, Brain, BookOpen, Award } from "lucide-react";
+import { ArrowRight, Brain, BookOpen, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { FloatingCursor } from "@/components/floating-cursor";

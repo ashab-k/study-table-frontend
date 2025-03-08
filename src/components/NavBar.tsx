@@ -2,16 +2,22 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
+
+type NavLink = {
+  href: string;
+  label: string;
+};
+
 const Navbar = () => {
-  const navLinks = [
+  const navLinks: NavLink[] = [
     { href: "/blog", label: "Blog" },
     { href: "/services", label: "Services" },
     { href: "/contact", label: "Contact" },
   ];
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
-    <nav className=" p-4 text-black backdrop-blur-lg shadow-md fixed w-[100%] z-999">
+    <nav className="p-4 text-black backdrop-blur-lg shadow-md fixed w-full z-50">
       <div className="container mx-auto flex justify-between items-center">
         <Link href="/">
           <header className="container mx-auto px-4">
@@ -32,7 +38,7 @@ const Navbar = () => {
         </div>
 
         <ul className="hidden md:flex space-x-6">
-          {navLinks.map((link: any, index: any) => (
+          {navLinks.map((link, index) => (
             <li key={index}>
               <Link href={link.href} className="hover:underline">
                 {link.label}
@@ -44,7 +50,7 @@ const Navbar = () => {
 
       {isOpen && (
         <ul className="md:hidden mt-4 space-y-4 text-center">
-          {navLinks.map((link: any, index: any) => (
+          {navLinks.map((link, index) => (
             <li key={index}>
               <Link
                 href={link.href}
